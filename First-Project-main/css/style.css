@@ -1,0 +1,427 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+:root{
+    --primary-color: black;
+    --secondary-color:lightgray;
+    --gray:#777;
+}
+html{
+    font-size: 75%;
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: "Mulish", sans-serif;
+}
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+#dark-btn{
+    height: 85px;
+    width: 160px;
+    border-radius: 80%;
+    border: 1rem var(--secondary-color) solid;
+    background-color: var(--primary-color);
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: white
+}
+
+h1,h2,h3{
+    font-family: "Playfair", serif;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 1.6rem 0;
+}
+p{
+    font-weight: 400;
+    margin: 1.6rem 0;
+    font-size:1.6rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+h1{
+    font-size: 4rem;
+}
+
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+   
+
+@media only screen and (max-width: 768px){
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    h3{
+        font-size: 1.6rem;
+    }
+    h4{
+        font-size: 1.6rem;
+    }
+    span{
+        color: var(--gray);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    a{
+        text-decoration: none;
+        margin: 1.6rem 0;
+        color: var(--gray);
+        font-size: 1.6rem;
+        border-bottom: 2px dotted var(--primary-color);
+    }
+
+    .site-container{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    hr{
+        margin: 16px 0;
+    }
+   
+    }
+    nav .menu a{
+        border-bottom: none;
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-left: 24px;
+    }
+    .mobile-menu{
+        display: none;
+
+    }
+/* Hero section */
+.hero{
+    display: grid;
+     grid-template-columns: 2fr 1fr;
+     position: relative;
+}
+.hero img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.hero .left{
+    background-image: url(/tree.jpeg);
+    background-size: cover;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hero .right{
+    background-color: grey;
+}
+.hero .content-box{
+    position: absolute;
+    background-color: salmon;
+    padding: 33px;
+    width: 40%;
+    top:30%;
+    left:65%;
+    transform: translate(-40%,-30%);
+}
+/* Blog */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* Make sure this is a single line with valid spacing: */
+    grid-template-rows: 0.2fr 1fr 1fr 0.8fr;
+    
+    margin-top: 20px;
+    grid-gap: 3rem;
+    grid-template-areas: 
+      "blog-item blog-item blog-item sidebar sidebar"
+      "blog-item blog-item blog-item sidebar sidebar"
+      "footer footer footer footer footer";
+  }
+
+
+/* Modal Styles */
+.modal {
+    display: block; /* Or flex, depending on your layout */
+    position: fixed; /* Stay in place even when scrolling */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Add a maximum width */
+    position: relative; /* For positioning the close button */
+     font-size: 1.6rem; /*Use existing font size */
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute; /* Position absolutely within .modal-content */
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+
+/* _____________________ */
+
+.like-dislike {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Spacing between icons */
+    margin-top: 1rem; /* Optional spacing above/below */
+  }
+  .like-dislike img{
+    width: 20px;
+    height: auto;
+    object-fit:cover;
+  }
+  button.like-btn, button.dislike-btn, button.comment-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  button.like-btn,
+button.dislike-btn,
+button.comment-btn {
+  width: 24px;   /* Adjust icon size */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.comment {
+  display: none; /* Hide by default */
+}
+
+.comment.show {
+  display: inline-block; /* Show when 'show' class is present */
+}
+
+.add-btn {
+    display: inline-block; /* Initially visible */
+}
+.add-btn.hidden {
+  display: none; /* Hide when 'hidden' class is added */
+}
+  
+  /* -------------------------------- */
+  /* button.like-btn,
+  button.dislike-btn, button.comment-btn {
+    width: 24px;   /* Adjust icon size */
+    /* height: auto;
+    cursor: pointer; */
+    /* transition: transform 0.2s;
+  }
+  .comment, .add-btn{
+    display:none;
+ }
+ .comment.show{
+    display: inline-block;
+
+ }
+.hidden{
+    display: inline-block;
+} */ 
+
+
+  /* Optional hover effect */
+  button.like-btn:hover,
+  button.dislike-btn:hover,
+  button.comment-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .blog-content span{
+    color:black;
+
+  }
+
+
+.blog{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:2rem;
+    grid-area: blog-item;
+}
+.blog .thumbnail{
+    object-fit: contain;
+
+}
+.blog-item{
+    background-color: var(--secondary-color);
+    margin: 40px 0;
+    padding:16px ;
+}
+.blog-content{
+    margin-top: 24px;
+}
+.pagination{
+    display: inline-block;
+   
+}
+.pagination .active{
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+
+}
+.pagination a{
+    color: var(--primary-color);
+    float: left;
+    padding: 8px 8px;
+    border: 0;
+}
+
+@media only screen and (max-width:768px){
+    .blog{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* side bar */
+aside {
+    grid-area: sidebar;
+}
+
+.commented-posts .wrapper{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+.recent-posts .wrapper{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+.thumb img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.wrapper .thumb{
+    flex:1;
+}
+.wrapper .content{
+    flex:2;
+    padding: 1px;
+}
+.wrapper p,span,a{
+    font-size: 1.4rem;
+    margin: 0;
+}
+@media only screen and (max-width: 768px){
+    .site-container{
+        width: 100%;
+        padding: auto;
+    }
+    main{
+        grid-template-columns: 1fr;
+    }
+}
+/* footer */
+footer{
+    background-color: var(--primary-color);
+     margin-top: 100px;
+    padding: 100px 0; 
+    grid-area: footer;
+}
+footer h3{
+    color: white;
+    font-size: 20px;
+}
+footer p, a, span{
+    color: var(--secondary-color);
+}
+.footer-top{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0 auto;
+    grid-gap: 16px;
+    justify-items: center;
+}
+.footer-bottom{
+    margin-top:50px;
+    display: flex;
+    justify-content:space-between;
+}
+.footer-menu li{
+    color: white;
+    display: inline-block;
+}
+.social-icons i{
+    color: var(--secondary-color);
+    font-size:16px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    padding:8px;
+}
+@media only screen and (max-width:768px){
+    .footer-top{
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+}
+/* .mulish-<uniquifier> {
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */
+
+/* .playfair-<uniquifier> {
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } */
