@@ -54,11 +54,28 @@ h1{
     font-size: 4rem;
 }
 
-nav{
-    display:flex;
+nav {
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 15px 0;
+    margin: 15px; /* Example: Adds some top/bottom padding */
+    /* transition: background-color 0.3s ease, padding 0.3s ease; /* For smoother CSS transitions */
 }
+nav.nav-expanded-style {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+body.dark-mode nav.nav-expanded-style {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Slightly more visible shadow in dark mode */
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+nav .logo h2 {
+    cursor: pointer; /* Indicate the logo is clickable */
+}
+
    
 
 @media only screen and (max-width: 768px){
